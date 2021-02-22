@@ -12,6 +12,7 @@
 	$pcode="";
 	$number="";
 	$err_number="";
+	$address="";
 	$s_add="";
 	$err_s_add="";
 	$city="";
@@ -20,6 +21,7 @@
 	$err_state="";
 	$zip="";
 	$err_zip="";
+	$bdate="";
 	$day="";
 	$err_day="";
 	$month="";
@@ -34,8 +36,44 @@
 	$err_bio="";
 	
 	
+	
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
+		if(empty($_POST["name"]))
+		{
+			$err_name = "Name Required";
+		}
+		
+		elseif(htmlspecialchars($_POST["name"]))
+		 {
+			 $err_name="HTML KeyWords Used";
+		 }
+
+		 else 
+		 {
+			 $name="No keywords used";
+			 $name=$_POST["name"];
+		 }
+		if(empty($_POST["uname"]))
+		{
+			$err_uname = "Username Required";
+		}
+		elseif(htmlspecialchars($_POST["uname"]))
+		 {
+			 $err_uname="HTML KeyWords Used";
+		 }
+		elseif(strlen($_POST["uname"]) < 6)
+		{
+			$err_uname = "Username should be at least 6 characters.";
+		}
+		elseif(strpos($_POST["uname"], " "))
+		{
+			$err_uname = "Username can not contain white space.";
+		}
+		else
+		{
+			$uname = $_POST["uname"];
+		}
 		if(empty($_POST["uname"]))
 		{
 			$err_uname = "Username Required";
@@ -53,12 +91,113 @@
 			$uname = $_POST["uname"];
 		}
 		if(empty($_POST["pass"]))
+		 {
+			 $err_pass="[Password Required]";
+		 }
+		 elseif(htmlspecialchars($_POST["pass"]))
+		 {
+			 $err_pass=["HTML KeyWords Used"];
+		 }
+		 elseif (strlen($_POST["uname"])<8) {
+		 	$err_pass=["[Password must be 8 charachters long"];
+		 }
+		 elseif(!strpos($_POST["pass"],"#"))
+		 {
+			 $err_pass="[Password should contain special character]";
+		 }
+		 elseif(!is_numeric($_POST["pass"]))
+		 {
+			 $err_pass="[Password should contain Numeric values]";
+		 }
+		 elseif(!ctype_upper($_POST["pass"]))
+		 {
+			 $err_pass="[Password should contain UpperCase values]";
+		 }
+		 elseif(!ctype_lower($_POST["pass"]))
+		 {
+			 $err_pass="[Password should contain LowerCase values]";
+		 }
+
+		 elseif(strpos($_POST["pass"]," "))
+		 {
+			 $err_pass="[Password should not contain white space]";
+		 }
+		 else
+		 {
+			 $pass=$_POST["pass"];
+		}
+		if(empty($_POST["conpass"]))
 		{
-			$err_pass = "Password Required";
+			$err_conpass = "Password Required";
+		}
+		elseif ($pass == $conpass)
+		{
+			$conpass = "Password Match";
+			$conpass = $_POST["conpass"];
 		}
 		else
 		{
-			$pass = $_POST["pass"];
+			$err_c_pass = "Password does not match.";
+		}
+		if(empty($_POST["email"]))
+		{
+			$err_email = "Email Required";
+		}
+		else
+		{
+			$email = $_POST["email"];
+		}
+		if(empty($_POST["number"]))
+		{
+			$err_number = "Number Required";
+		}
+		elseif(is_numeric($number))
+		{
+			$number = $_POST["number"];
+		}
+		else
+		{
+			$err_number = "MUST CONTAIN ONLY NUMERIC VALUES!!";;
+		}
+		if(empty($_POST["pcode"]))
+		{
+			$err_pcode = "Code Required";
+		}
+		else
+		{
+			$pcode = $_POST["pcode"];
+		}
+		if(empty($_POST["s_add"]))
+		{
+			$err_s_add = "Street Required";
+		}
+		else
+		{
+			$s_add = $_POST["s_add"];
+		}
+		if(empty($_POST["city"]))
+		{
+			$err_city = "City Required";
+		}
+		else
+		{
+			$city = $_POST["city"];
+		}
+		if(empty($_POST["state"]))
+		{
+			$err_state = "State Required";
+		}
+		else
+		{
+			$state = $_POST["state"];
+		}
+		if(empty($_POST["zip"]))
+		{
+			$err_zip = "Zip/Postal Code Required";
+		}
+		else
+		{
+			$zip = $_POST["zip"];
 		}
 		if(empty($_POST["bio"]))
 		{
@@ -78,7 +217,6 @@
 		{
 			$gender = $_POST["gender"];
 		}
-		
 		if(!isset($_POST["about"]))
 		{ 
 			$err_about = "No buttons were checked."; 
@@ -88,19 +226,22 @@
 			$about = $_POST["about"];
 		}
 		
-		if(!isset($_POST["profession"]))
-		{ 
-			$err_profession = "No buttons were chosen."; 
-		} 
-		else
-		{
-			$profession = $_POST["profession"];
-		}
 		
-		echo "Name: ". $_POST["uname"]."<br>";
+		
+		
+		
+		
+		echo "Name: ". $_POST["name"]."<br>";
+		echo "User Name: ". $_POST["uname"]."<br>";
 		echo "Password: ". $_POST["pass"]."<br>";
+		echo "Confirmed Password: ". $_POST["conpass"]."<br>";
+		echo "Email: ". $_POST["email"]."<br>";
+
+		echo "Post Code: ". $_POST["pcode"]."<br>";
+		echo "Number: ". $_POST["number"]."<br>";
+		echo "Address: ". $_POST["s_add"].  $_POST["city"].  $_POST["state"].  $_POST["zip"]. "<br>";
 		echo "Gender: ". $_POST["gender"]."<br>";
-		echo "Profession: ". $_POST["profession"]."<br>";
+		echo "Date of Birth: ". $_POST["day"].  $_POST["month"]. $_POST["year"]."<br>";
 		echo "Bio: ". $_POST["bio"]."<br>";
 		
 		 /*$var=array($_POST["hobbies"]);
@@ -124,11 +265,12 @@
 
 ?>
 
+
 <html>
 	<head></head>
 	<body>
-		
-		<h1>Club Member Registration</h1>
+	<fieldset>	
+		<legend><h1>Club Member Registration</h1></legend>
 		<form action="" method="post">
 			<table>
 			    <tr>
@@ -194,16 +336,17 @@
 							</select>
 					<td><span><?php echo $err_day;?></span></td>
 					<td><select name = "month">
-					<option disabled selected>Month</option>
-					<?php
+					    <option disabled selected>Month</option>
+					    <?php
 						$month= array("Jan" => "1", "Feb" => "2", "Mar" => "3", "Apr" => "4","May" => "5","Jun" => "6","Jul" => "7","Aug" => "8","Sep" => "9","Oct" => "10","Nov" => "11","Dec" => "12");
 						foreach($month as $j=>$j_val)
 						{
 							echo "<option> $j($j_val)<option>";
 						}
-						?>
+						?>	
 						</select>
-						<td><select name="year">
+					<td><span><?php echo $err_month;?></span></td>	
+					<td><select name="year">
 							<option disabled selected>Year</option>
 							<?php
 							    for($i=1900;$i<=2021;$i++){
@@ -211,7 +354,7 @@
 								}
 							?>
 							</select>
-						<td><span><?php echo $err_year;?></span></td>
+					<td><span><?php echo $err_year;?></span></td>
 						
 					</td>
 				</tr>
@@ -240,5 +383,6 @@
 			<br>
 			<input type="submit" name="Register">
 		</form>
+		</fieldset>
 	</body>
 </html>
