@@ -90,42 +90,18 @@
 		{
 			$uname = $_POST["uname"];
 		}
-		if(empty($_POST["pass"]))
-		 {
-			 $err_pass="[Password Required]";
-		 }
-		 elseif(htmlspecialchars($_POST["pass"]))
-		 {
-			 $err_pass=["HTML KeyWords Used"];
-		 }
-		 elseif (strlen($_POST["uname"])<8) {
-		 	$err_pass=["[Password must be 8 charachters long"];
-		 }
-		 elseif(!strpos($_POST["pass"],"#"))
-		 {
-			 $err_pass="[Password should contain special character]";
-		 }
-		 elseif(!is_numeric($_POST["pass"]))
-		 {
-			 $err_pass="[Password should contain Numeric values]";
-		 }
-		 elseif(!ctype_upper($_POST["pass"]))
-		 {
-			 $err_pass="[Password should contain UpperCase values]";
-		 }
-		 elseif(!ctype_lower($_POST["pass"]))
-		 {
-			 $err_pass="[Password should contain LowerCase values]";
-		 }
-
-		 elseif(strpos($_POST["pass"]," "))
-		 {
-			 $err_pass="[Password should not contain white space]";
-		 }
-		 else
-		 {
-			 $pass=$_POST["pass"];
-		}
+		if (strlen($_POST["pass"]) <= 8) {
+        $passwordErr = "Your Password Must Contain At Least 8 Characters!";
+    }
+    elseif(!preg_match("#[0-9]+#",$pass)) {
+        $passwordErr = "Your Password Must Contain At Least 1 Number!";
+    }
+    elseif(!preg_match("#[A-Z]+#",$pass)) {
+        $err_pass = "Your Password Must Contain At Least 1 Capital Letter!";
+    }
+    elseif(!preg_match("#[a-z]+#",$pass)) {
+        $err_pass = "Your Password Must Contain At Least 1 Lowercase Letter!";
+    }
 		if(empty($_POST["conpass"]))
 		{
 			$err_conpass = "Password Required";
@@ -240,8 +216,8 @@
 		echo "Post Code: ". $_POST["pcode"]."<br>";
 		echo "Number: ". $_POST["number"]."<br>";
 		echo "Address: ". $_POST["s_add"].  $_POST["city"].  $_POST["state"].  $_POST["zip"]. "<br>";
-		echo "Gender: ". $_POST["gender"]."<br>";
-		echo "Date of Birth: ". $_POST["day"].  $_POST["month"]. $_POST["year"]."<br>";
+		echo "Gender: ". $gender."<br>";
+		echo "Date of Birth: ". $day,  $month, $year."<br>";
 		echo "Bio: ". $_POST["bio"]."<br>";
 		
 		 /*$var=array($_POST["hobbies"]);
@@ -252,11 +228,15 @@
 				  echo $var[$i].", ";
 			  }*/
 			  
-		$var = $_POST["about"];
+		$var = $about;
 		echo "Where did you hear about us?: ";
-		for($i=0; $i<count($var); $i++)
-		{
-			echo $var[$i]. ", ";
+		if (is_array($var)) {
+			for($i=0; $i<count($var); $i++)
+			{
+				echo $var[$i]. ", ";
+			}
+		}else{
+			echo $var;
 		}
 		
 	}
