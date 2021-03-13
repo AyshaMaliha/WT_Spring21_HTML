@@ -363,7 +363,7 @@
 			<br>
 			<input type="submit" name="Register">
 			<br>
-			<h5 style="text-align:left;">Already have an account?</h5><h5 style="text-align:left;"><a href="Login.php">Log-In</a></h5>
+			<h5 style="text-align:left;">Already have an account? <a href="Login.php">Log-In</a></h5>
 			
 		</form>
 		</fieldset>

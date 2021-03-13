@@ -13,7 +13,7 @@
 	<body>
 	    <fieldset style="width:1000px" align="center">
 	    <legend align="center"><center><h1>Hospital Hub</h1></center></legend>
-		<form action="" method="post">
+		<form action="Assistant_Appointment_Request_Form.php" method="post">
 		
 			<center><h1>Appointment Request List</h1></center>
 			<table>
@@ -22,6 +22,9 @@
                     <td>
                         <select name="requests" style="height: 50px; width: 250px">
                             <option disabled selected>Requests</option>
+							<option >Requests one</option>
+							<option>Requests 2</option>
+							<option >Requests 3</option>
 							<?php 
                                 echo "<b>Fahim Mahtab Ifsan</b>"
                                 
@@ -30,7 +33,8 @@
                         </select>
 						<?php echo $err_pname;?>
                         
-                        
+                       </td>
+					   <td><button type="submit">Check</button></td>
                         
                         
 				</tr>

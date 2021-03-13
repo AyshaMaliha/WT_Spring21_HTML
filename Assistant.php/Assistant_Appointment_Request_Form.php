@@ -6,7 +6,7 @@
 	<body>
 	    <fieldset style="width:1000px" align="center">
 	    <legend align="center"><center><h1>Hospital Hub</h1></center></legend>
-		<form action="" method="post">
+		
 		
 			<center><h1>Apointment Request</h1></center>
 			<h3 style="text-align:left;">Patient Name: Fahim Mahtab Ifsan</h3>
@@ -18,10 +18,9 @@
 				
 				
 			
-			<button align="left" onclick="document.location='Assistant_Appointment_Request_Confirm_Form.php'" style="height: 100px; width: 250px";><b><h2>Proceed</h2></b></button>
-			<button align="right" onclick="document.location='Notification.php'" style="height: 100px; width: 250px";><b><h2>Reject</h2></b></button>
-	
-		</form>
+			<button align="left" onclick="window.location.href='Assistant_Appointment_Confirm_Form.php'" style="height: 100px; width: 250px";><b><h2>Proceed</h2></b></button>
+			<button align="right" onclick="window.location.href='Notification.php'" style="height: 100px; width: 250px";><b><h2>Reject</h2></b></button>
+
 		</fieldset>	
 		</body>
 </html>
