@@ -318,7 +318,7 @@
 				</tr>
 					
 				<tr>
-					<td><span><b>Birth Date</b></span></td>
+					<td><span><b>Birth Date</b>:</span></td>
                     <td>
                         <select name="day">
                             <option disabled selected>Day</option>

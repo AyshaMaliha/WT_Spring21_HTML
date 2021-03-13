@@ -35,7 +35,7 @@
 				<br>
 				
 			
-			<button align="left" onclick="document.location='Assistant_Appointment_Request_List_Form.php'" style="height: 100px; width: 250px";><b><h2>Appointment Request</h2></b></button>
+			<button align="left" style="height: 100px; width: 250px";><a href="Assistant_Appointment_Request_List_Form.php"><b><h2>Appointment Request</h2></b></a></button>
 			<button align="right" onclick="document.location='Login.php'" style="height: 100px; width: 250px";><b><h2>Log Out</h2></b></button>
 	
 		</form>
