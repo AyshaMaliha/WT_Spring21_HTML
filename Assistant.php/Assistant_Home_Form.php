@@ -31,10 +31,12 @@
 				<button  onclick="document.location='Experience.html'" style="height: 50px; width: 50px"><b><h3>WED</h3></b></button>
 				<button  onclick="document.location='Education.html'" style="height: 50px; width: 50px"><b><h3>THU</h3></b> </button>
 				<button  onclick="document.location='Family.html'" style="height: 50px; width: 50px"><b><h3>FRI</h3></b> </button>
-				<button  onclick="document.location='Achievement.html'" style="height: 50px; width: 50px"><b><h3>SAT</h3></b></button>
+				<button  onclick="document.location='Achievement.html'" style="height: 50px; width: 50px"><b><h3>SAT</h3></b></button><br>
+				<br>
 				
 			
-			<button onclick="document.location='Assistant_Appointment_Request_List_Form.php'"
+			<button align="left" onclick="document.location='Assistant_Appointment_Request_List_Form.php'" style="height: 100px; width: 250px";><b><h2>Appointment Request</h2></b></button>
+			<button align="right" onclick="document.location='Login.php'" style="height: 100px; width: 250px";><b><h2>Log Out</h2></b></button>
 	
 		</form>
 		</fieldset>	
