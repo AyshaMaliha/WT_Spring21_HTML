@@ -7,7 +7,7 @@
 	    <fieldset style="width:1000px" align="center">
 	    <legend align="center"><center><h1>Hospital Hub</h1></center></legend>
 		
-		<img align="left" src="IMG_20210313_154907.jpg" alt="" height="300px" width="250px">
+		<img align="left" src="image1.jpg" alt="" height="300px" width="250px">
 			<center><h1>Noor A Aysha</h1></center>
 			<center> <h2>ID:4202</h2>
 			<center> <h2>Assistant of Dr. Farzana Sohael</h2>
@@ -67,6 +67,7 @@
 				<?php } ?>
 			
 			<a href="Assistant_Appointment_Request_List_Form.php" target="_blank"><button align="left" style="height: 100px; width: 250px";><b><h2>Appointment Request</h2></b></button></a>
+			
 			<button align="right" onclick="document.location='Login.php'" style="height: 100px; width: 250px";><b><h2>Log Out</h2></b></button>
 	
 		

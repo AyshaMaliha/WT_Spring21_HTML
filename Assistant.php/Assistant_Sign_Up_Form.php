@@ -188,46 +188,7 @@
 			 $name="No keywords used";
 			 $name=$_POST["hname"];
 		 }
-		if(empty($_POST["s_add"]))
-		{
-			$err_s_add = "Street Required";
-		}
-		else
-		{
-			$s_add = $_POST["s_add"];
-		}
-		if(empty($_POST["city"]))
-		{
-			$err_city = "City Required";
-		}
-		else
-		{
-			$city = $_POST["city"];
-		}
-		if(empty($_POST["state"]))
-		{
-			$err_state = "State Required";
-		}
-		else
-		{
-			$state = $_POST["state"];
-		}
-		if(empty($_POST["zip"]))
-		{
-			$err_zip = "Zip/Postal Code Required";
-		}
-		else
-		{
-			$zip = $_POST["zip"];
-		}
-		if(empty($_POST["bio"]))
-		{
-			$err_bio = "Bio Required";
-		}
-		else
-		{
-			$bio = $_POST["bio"];
-		}
+		
 		
 		 
 		if(!isset($_POST["gender"]))
@@ -279,7 +240,7 @@
 <html>
 	<head></head>
 	<body>
-	    <fieldset style="width:500px" align="center">
+	    <fieldset style="width:1000px" align="center">
 	    <legend align="center"><center><h1>Sign Up As Assistant</h1></center></legend>
 		<form action="" method="post">
 			<table>
