@@ -29,6 +29,8 @@
 	$err_about="";
 	$bio = "";
 	$err_bio="";
+	$err_birthday="";
+	$birthday="";
 	
 	
 	
@@ -245,6 +247,11 @@
 			$about = $_POST["about"];
 		}
 		
+		if(!isset($_POST['day']) || !isset($_POST['month']) || !isset($_POST['year'])){
+			$err_birthday = "Date of birth is required!";
+		}else{
+			$birthday = $_POST['day']."/".$_POST['month']."/".$_POST['year'];
+		}
 		
 		
 		
@@ -259,7 +266,7 @@
 		echo "Doctor's Name: ". $_POST["dname"]."<br>";
 		echo "Hospital Name: ". $_POST["hname"]."<br>";
 		echo "Gender: ". $gender."<br>";
-		echo "Date of Birth: ". $day,  $month, $year."<br>";
+		echo "Date of Birth: ". $birthday."<br>";
 		
 		
 	}
@@ -348,9 +355,7 @@
                                 }
                             ?>
                         </select>
-                        <?php echo $err_day;
-                        echo $err_month;
-                        echo $err_year;?>
+                        <?php echo $err_birthday; ?>
 				</tr>
 				<tr>
 					<td><span><b>Gender</b>:</span></td>

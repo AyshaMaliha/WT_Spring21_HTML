@@ -113,7 +113,7 @@
 				
 			
 			
-			<button align="center" onclick="document.location='Notification.php'" style="height: 60px; width: 250px";><b><h2>Confirm</h2></b></button>
+			<a href="Assistant_Home_Form.php"><button align="center"  style="height: 60px; width: 250px";><b><h2>Confirm</h2></b></button></a>
 	
 		</form>
 		</fieldset>	

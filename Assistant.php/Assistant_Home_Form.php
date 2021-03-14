@@ -18,8 +18,8 @@
 			
 			
 			
-			     <h4 style="text-align:left;"><a href="Edit_Profile.php">Edit Profile</a></h5>
-			     <h5 style="text-align:left;"><a href="Chat.php">Chat</a></h5><h5 style="text-align:left;"><a href="Notification.php">Notification</a></h5>
+			     <h4 style="text-align:left;"><a href="Assistant_Account.php">Edit Profile</a></h5>
+			     <h5 style="text-align:left;"><a href="Assistant_Chat.php">Chat</a></h5><h5 style="text-align:left;"><a href="Assistant_Notification.php">Notification</a></h5>
 				 
 				 <h1>Appointment</h1>
 				 

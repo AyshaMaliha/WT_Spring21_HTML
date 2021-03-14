@@ -2,10 +2,10 @@
     $pname="";
 	$err_pname="";
 	
-	if ($_SERVER["REQUEST_METHOD"] == "POST")
+	/*if ($_SERVER["REQUEST_METHOD"] == "POST")
 	{ 
       echo " Patient Name: ". $_POST["pname"]."<br>";
-	}
+	}*/
 	
 ?>
 <html>
@@ -22,9 +22,9 @@
                     <td>
                         <select name="requests" style="height: 50px; width: 250px">
                             <option disabled selected>Requests</option>
-							<option >Requests one</option>
-							<option>Requests 2</option>
-							<option >Requests 3</option>
+							<option >Fahim Mahtab Ifsan</option>
+							<option>Tanzila Tabassum</option>
+							<option >Sadia Afrin</option>
 							<?php 
                                 echo "<b>Fahim Mahtab Ifsan</b>"
                                 
