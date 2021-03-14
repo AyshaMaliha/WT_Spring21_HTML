@@ -7,6 +7,7 @@
 	
 	
 	
+	
 	if($_SERVER["REQUEST_METHOD"] == "POST")
 	{
 		
@@ -106,8 +107,10 @@
 	</table>
 	
 	<br>
-	<button  type="submit" formaction="Home.php" style="height: 40px; width: 200px; float: center"><b><h3>Log In</h3></b> </button><br>
-	<a href="ForgotPassword.php">Forgot Password?</a
+	<button  type="submit" formaction="Assistant_Home_Form.php" style="height: 40px; width: 200px; float: center"><b><h3>Log In</h3></b> </button><br>
+	<button  type="submit" formaction="Admin_Profile.php" style="height: 40px; width: 200px; float: center"><b><h3>Log In</h3></b> </button><br>
+	<button  type="submit" formaction="CoordinatorProfilePage.php" style="height: 40px; width: 200px; float: center"><b><h3>Log In</h3></b> </button><br>
+	<a href="ForgotPassword.php">Forgot Password?</a>
 	</form>
 	</fieldset>
 		

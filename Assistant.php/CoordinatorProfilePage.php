@@ -5,46 +5,14 @@
 	$doctor="";
 	$err_doctor="";
 	
-	if($_SERVER["REQUEST_METHOD"] == "POST")
-	{
-		
-		
-		if(!isset($_POST["department"]))
-		{ 
-			$err_department = "No buttons were checked."; 
-		} 
-		else
-		{
-			$department = $_POST["department"];
-		}
-		
-		if(!isset($_POST["doctor"]))
-		{ 
-			$err_doctor = "No buttons were chosen."; 
-		} 
-		else
-		{
-			$doctor = $_POST["doctor"];
-		}
-		
-		echo "Department: ". $_POST["department"]."<br>";
-		echo "Doctor: ". $_POST["doctor"]."<br>";
-		
-
-	
-		
-	}
-	
-	
-
-?>
+?>	
 
 <html>
 	<head></head>
 	<body>
 	<fieldset>
 		<legend><h1><b>Coordinator Profile</b></h1></legend>
-		<form action="" method="post">
+		<form action="Admin_Hospital_Form.php" method="post">
 	<table>
 	
 	<td>
